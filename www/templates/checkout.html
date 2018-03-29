@@ -1,0 +1,121 @@
+<ion-view class="background">
+<div class='bar bar-subheader bar-assertive'>
+  <h1 class="title">Ολοκλήρωση παραγγελίας</h1>
+</div>
+<ion-content class="has-subheader padding">
+
+<div class="list list-inset">
+  <div class="item item-divider">
+   Στοιχεία χρέωσης
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Όνομα</span>
+    <input type="text" ng-model="newOrder.billing.first_name">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Επίθετο</span>
+    <input type="text" ng-model="newOrder.billing.last_name">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Διεύθυνση</span>
+    <input type="text" ng-model="newOrder.billing.address">
+  </label>
+  <label class="item item-input item-select background">
+    <span class="input-label">Περιφέρεια</span>
+    <select ng-model="newOrder.billing.state">
+      <option selected>Αττική</option>
+      <option>Ανατολική Μακεδονία και Θράκη</option>
+      <option>Κεντρική Μακεδονία</option>
+      <option>Δυτική Μακεδονία</option>
+      <option>Ήπειρος</option>
+      <option>Θεσσαλία</option>
+      <option>Ιόνιοι Νήσοι</option>
+      <option>Θεσσαλία</option>
+      <option>Δυτική Ελλάδα</option>
+      <option>Στερεά Ελλάδα</option>
+      <option>Πελοπόννησος</option>
+      <option>Βόρειο Αιγαίο</option>
+      <option>Νότιο Αιγαίο</option>
+      <option>Κρήτη</option>
+    </select>
+  </label>
+  <label class="item item-input item-select">
+    <span class="input-label">Πόλη</span>
+    <input type="text" ng-model="newOrder.billing.city">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Ταχυδρομικός κωδικός</span>
+    <input type="text" ng-model="newOrder.billing.postcode">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Τηλέφωνο</span>
+    <input type="text" ng-model="newOrder.billing.phone">
+  </label>
+  <ion-checkbox ng-model="newOrder.billingToShipping" ng-change="switchBillingToShipping()">Τα στοιχεία αποστολής είναι ίδια</ion-checkbox>
+  <div class="item item-divider" ng-hide="newOrder.billingToShipping">
+   Στοιχεία αποστολής
+  </div>
+  <label class="item item-input" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">Όνομα</span>
+    <input type="text" ng-model="newOrder.shipping.first_name">
+  </label>
+  <label class="item item-input" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">Επίθετο</span>
+    <input type="text" ng-model="newOrder.shipping.last_name">
+  </label>
+  <label class="item item-input" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">Διεύθυνση</span>
+    <input type="text" ng-model="newOrder.shipping.address_1">
+  </label>
+  <label class="item item-input item-select" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">Περιφέρεια</span>
+    <select ng-model="newOrder.shipping.state">
+     <option selected>Αττική</option>
+      <option>Ανατολική Μακεδονία και Θράκη</option>
+      <option>Κεντρική Μακεδονία</option>
+      <option>Δυτική Μακεδονία</option>
+      <option>Ήπειρος</option>
+      <option>Θεσσαλία</option>
+      <option>Ιόνιοι Νήσοι</option>
+      <option>Θεσσαλία</option>
+      <option>Δυτική Ελλάδα</option>
+      <option>Στερεά Ελλάδα</option>
+      <option>Πελοπόννησος</option>
+      <option>Βόρειο Αιγαίο</option>
+      <option>Νότιο Αιγαίο</option>
+      <option>Κρήτη</option>
+    </select>
+  </label>
+  <label class="item item-input" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">Πόλη</span>
+    <input type="text" ng-model ="newOrder.billing.city">
+  </label>
+  <label class="item item-input" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">Ταχυδρομικός κωδικός</span>
+    <input type="text" ng-model="newOrder.shipping.postcode">
+  </label>
+  <label class="item item-input" ng-hide="newOrder.billingToShipping">
+    <span class="input-label">Τηλέφωνο</span>
+    <input type="text" ng-model="newOrder.shipping.phone">
+  </label>
+  <div class="item item-divider">
+    Πληροφορίες πληρωμής
+  </div>
+  <label class="item item-input item-select">
+    <span class="input-label">Τρόπος πληρωμής</span>
+    <select ng-model="newOrder.paymentMethod">
+      <option ng-repeat="method in paymentMethods">{{method.method_title}}</option>
+    </select>
+  </label>
+
+
+  <div class="button-bar background">
+    <button class="button button-assertive button-block button-outline" ui-sref="app.home">Ακύρωση</button>
+    <button class="button button-assertive button-block" ng-click="placeOrder(newOrder)">Κάντε παραγγελία</button>
+  </div>
+</div>
+
+
+
+</ion-content>
+</ion-view>

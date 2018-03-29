@@ -1,0 +1,31 @@
+ <body ng-controller="ContactCtrl">
+<ion-view class="background">
+     <ion-nav-title><center>ΕΠΙΚΟΙΝΩΝΙΑ</center></ion-nav-title>
+
+    <ion-content class="has-header padding">
+        <form ng-submit="sendMail()">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Όνομα</span>
+                    <input type="text" ng-model="contact.name">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Email </span>
+                    <input type="text" ng-model="contact.email" ng-blur="checkUserEmail(contact.email)">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Μήνυμα</span>
+                    <input type="text" ng-model="contact.message">
+                </label>
+                <padding>
+                    <button class="button button-balanced button-block" ng-click="sendMail()">
+                        Αποστολή
+                    </button>
+                </padding>
+            </div>
+        </form>
+    </ion-content>
+ 
+    
+
+  </body>

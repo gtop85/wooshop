@@ -1,0 +1,18 @@
+<ion-view>
+  <ion-nav-title><center>ΛΟΓΑΡΙΑΣΜΟΣ</center></ion-nav-title>
+   <ion-content><br><center>ΑΡΧΕΙΟ ΠΑΡΑΓΓΕΛΙΩΝ
+
+        <div class="row header">
+          <div class="col col-15">Κωδικός</div>
+          <div class="col col-35">Καταχώρηση</div>
+          <div class="col col-20">Σύνολο</div>
+          <div class="col col-30">Λεπτομέρειες</div>
+        </div>
+        <div class="row" ng-repeat="order in orders">
+          <div class="col col-15">{{order.id}}</div>
+          <div class="col col-35">{{humaneDate(order.created_at)}}</div>
+          <div class="col col-20">{{order.total}}&euro;</div>
+          <div class="col col-30"><button class="button button-balanced button-small" ng-click="showOrderModal()">Προβολή</button></div>
+        </div></center>
+   </ion-content>
+</ion-view>

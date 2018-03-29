@@ -1,0 +1,117 @@
+<ion-view>
+<ion-nav-title><center>ΕΓΓΡΑΦΗ</center></ion-nav-title>
+ <div class='bar bar-subheader bar-stable'>
+  <h1 class="title">Συμπληρώστε τα στοιχεία σας</h1>
+</div>
+<ion-content class="has-subheader padding">
+
+<div class="list list-inset">
+  <div class="item item-divider">
+    ΠΡΟΣΩΠΙΚΑ ΣΤΟΙΧΕΙΑ
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Όνομα</span>
+    <input type="text" ng-model="newUser.first_name">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Επίθετο</span>
+    <input type="text" ng-model="newUser.last_name">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Διεύθυνση Email</span>
+    <input type="email" ng-model="newUser.email" ng-blur="checkUserEmail(newUser.email)">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Κωδικός</span>
+    <input type="password" ng-model="newUser.password">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Τηλέφωνο</span>
+    <input type="text" ng-model="newUser.billing_address.phone">
+  </label>
+  <div class="item item-divider">
+    Στοιχεία χρέωσης
+  </div>
+  <label class="item item-input">
+    <span class="input-label">Διεύθυνση</span>
+    <input type="text" ng-model="newUser.billing_address.address">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Ταχυδρομικός κώδικας</span>
+    <input type="text" ng-model="newUser.billing_address.postcode">
+  </label>
+   <label class="item item-input">
+    <span class="input-label">Πόλη</span>
+    <input type="text" ng-model ="newUser.billing_address.city">
+  </label>
+  <label class="item item-input item-select">
+    <span class="input-label">Περιφέρεια</span>
+    <select ng-model="newUser.billing_address.state">
+      <option selected>Αττική</option>
+      <option>Ανατολική Μακεδονία και Θράκη</option>
+      <option>Κεντρική Μακεδονία</option>
+      <option>Δυτική Μακεδονία</option>
+      <option>Ήπειρος</option>
+      <option>Θεσσαλία</option>
+      <option>Ιόνιοι Νήσοι</option>
+      <option>Θεσσαλία</option>
+      <option>Δυτική Ελλάδα</option>
+      <option>Στερεά Ελλάδα</option>
+      <option>Πελοπόννησος</option>
+      <option>Βόρειο Αιγαίο</option>
+      <option>Νότιο Αιγαίο</option>
+      <option>Κρήτη</option>
+    </select>
+  </label>
+ 
+  <ion-checkbox ng-model="newUser.billingToShipping" ng-change="switchBillingToShipping()">
+      Αποστολή στην ίδια διεύθυνση
+  </ion-checkbox>
+  <div class="item item-divider" ng-hide="newUser.billingToShipping">
+    Στοιχεία αποστολής
+  </div>
+  <label class="item item-input" ng-hide="newUser.billingToShipping">
+    <span class="input-label">Διεύθυνση</span>
+    <input type="text" ng-model="newUser.shipping_address.address">
+  </label>
+    <label class="item item-input" ng-hide="newUser.billingToShipping">
+    <span class="input-label">Ταχυδρομικός κώδικας</span>
+    <input type="text" ng-model="newUser.shipping_address.postcode">
+  </label>
+  <label class="item item-input" ng-hide="newUser.billingToShipping">
+    <span class="input-label">Πόλη</span>
+    <input type="text" ng-model="newUser.shipping_address.city">
+  </label>
+    <label class="item item-input item-select" ng-hide="newUser.billingToShipping">
+    <span class="input-label">Περιφέρεια</span>
+    <select ng-model="newUser.shipping_address.state">
+      <option selected>Αττική</option>
+      <option>Ανατολική Μακεδονία και Θράκη</option>
+      <option>Κεντρική Μακεδονία</option>
+      <option>Δυτική Μακεδονία</option>
+      <option>Ήπειρος</option>
+      <option>Θεσσαλία</option>
+      <option>Ιόνιοι Νήσοι</option>
+      <option>Θεσσαλία</option>
+      <option>Δυτική Ελλάδα</option>
+      <option>Στερεά Ελλάδα</option>
+      <option>Πελοπόννησος</option>
+      <option>Βόρειο Αιγαίο</option>
+      <option>Νότιο Αιγαίο</option>
+      <option>Κρήτη</option>
+    </select>
+  </label>
+
+
+
+
+  <div class="button-bar background" font-color="dark">
+    <button class="button button-assertive button-block" ui-sref="app.home">Ακύρωση</button>
+    <button class="button button-balanced button-block" ng-disabled="{{!newUser.isValid}}" ng-click="signUp(newUser)">Εγγραφή</button>
+  </div>
+</div>
+
+
+
+</ion-content>
+</ion-view>

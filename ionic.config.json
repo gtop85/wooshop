@@ -1,0 +1,14 @@
+{
+  "name": "WooIonic",
+  "type": "ionic1",
+  "app_id": "26a514c8",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ],
+  "integrations": {}
+}

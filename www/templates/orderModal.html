@@ -1,0 +1,22 @@
+ <ion-modal-view class="background">
+    <ion-header-bar  class="background"> 
+       <h1 class="title"><center>ΠΑΡΑΓΓΕΛΙΑ</center></h1>
+    </ion-header-bar>    
+    <ion-content>
+       <ion-list>
+        <ion-item ng-repeat="order in orders">
+          <div>Κωδικός παραγγελίας: {{order.id}}</div>
+          <div>Καταχωρήθηκε: {{humaneDate(order.created_at)}}</div>
+          <div>Τρόπος πληρωμής: {{order.payment_details.method_title}}</div><br>
+          Προϊόντα
+          <ion-item  ng-repeat="line_item in order.line_items" class="item-text-wrap item-avatar-right" style="font-size:13px;">{{line_item.quantity}} x {{line_item.name}}<br>
+           <div >Τιμή: {{line_item.price}}&euro;</div>
+           <div >Υποσύνολο: {{line_item.total}}&euro;</div>
+          </ion-item><br>
+          <div>Συνολικά προϊόντα: {{order.total_line_items_quantity}}</div>
+           <div>Mεταφορικά: {{order.total_shipping}}&euro;</div>
+          <div>Σύνολο με τα μεταφορικά: {{order.total}}&euro;</div></ion-item>
+       </ion-list>
+       <div class="button-bar"><button class="button button-block  button-assertive" ng-click="modal.hide()">Κλείσιμο</button></div>
+    </ion-content>
+</ion-modal-view>

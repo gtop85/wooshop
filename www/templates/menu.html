@@ -1,0 +1,38 @@
+<ion-side-menus>  
+        <ion-side-menu-content class="background">
+           
+            <ion-nav-bar class="bar-stable">
+                <ion-nav-back-button></ion-nav-back-button>
+                
+                <ion-nav-buttons side="left">
+                    <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+                </ion-nav-buttons>
+
+                <ion-nav-buttons side= "right">
+                    <button class="button button-icon-left button-clear" ng-click="showCartModal()">
+                   <i class="icon ion-android-cart"></i>{{cartCount}}
+                    </button>
+                </ion-nav-buttons>   
+
+            </ion-nav-bar>
+            <ion-nav-view name="menuContent"></ion-nav-view>
+        </ion-side-menu-content> 
+
+    <ion-side-menu class="background"><i class="icon ion-android-home" style="font-size:44px;" menu-close ui-sref="app.home"></i>
+        <img src="img/logo_el.png" style="width:80%; height:auto;" menu-close ui-sref="app.home" />
+          <ion-list> 
+            <ion-item ng-if="!userData" menu-close ui-sref="app.login">ΕΙΣΟΔΟΣ <i class="icon ion-log-in"></i></ion-item>
+            <ion-item ng-if="!userData" menu-close ui-sref="app.signup">ΕΓΓΡΑΦΗ</ion-item>
+            <ion-item menu-close ui-sref="app.browse">ΠΡΟΪΟΝΤΑ</ion-item>
+            <ion-item menu-close ui-sref="app.categories">ΚΑΤΗΓΟΡΙΕΣ</ion-item>
+            <ion-item menu-close ui-sref="app.map" >ΚΑΤΑΣΤΗΜΑΤΑ</ion-item>
+            <ion-item menu-close ui-sref="app.barcode" >BARCODE SCANNER</ion-item>
+            <ion-item menu-close ui-sref="app.tracking" >ΑΝΑΖΗΤΗΣΗ ΑΠΟΣΤΟΛΗΣ</ion-item>
+            <ion-item menu-close ui-sref="app.contact">ΕΠΙΚΟΙΝΩΝΙΑ <i class="icon ion-android-call"></i></ion-item>
+            <ion-item ng-if="userData" menu-close ui-sref="app.orders">ΛΟΓΑΡΙΑΣΜΟΣ</ion-item>
+            <ion-item menu-close ui-sref="app.home" ng-click="logout()" ng-if="userData">ΑΠΟΣΥΝΔΕΣΗ <i class="icon ion-log-out"></i></ion-item>
+
+        </ion-list>
+              
+    </ion-side-menu>   
+</ion-side-menus>

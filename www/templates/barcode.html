@@ -1,0 +1,19 @@
+<ion-view>
+  <ion-nav-title><center>BARCODE SCANNER</center></ion-nav-title>
+   <ion-content><br>
+      <button class="button button-block button-balanced icon ion-qr-scanner" ng-click="scanBarcode()">
+        Σάρωση κωδικού
+      </button>
+      <label class="item item-input">Αποτελέσματα <br>Κωδικός: 
+      <input type="text" name="test" id="test" ng-model="code">
+    </label>
+
+   <button class="button button-block button-balanced icon ion-search" ng-click="getBarcode()">
+        Αναζήτηση κωδικού
+      </button>
+        <div> {{products.sku}} {{product.title}}{{product.price}}</div>
+   </ion-content>
+</ion-view>
+
+
+    

@@ -1,0 +1,24 @@
+<ion-view><ion-nav-view class="background"></ion-nav-view>
+    <ion-nav-title><center>ΟΛΑ ΤΑ ΠΡΟΪΟΝΤΑ</center></ion-nav-title>
+
+    <ion-content>
+        <ion-refresher pulling-text="Aνανέωση" on-refresh="doRefresh()"></ion-refresher>
+        <ion-list class="background">
+            <ion-item class="item-thumbnail-left item-button-bottom" ng-repeat="product in products" ui-sref="app.product({productID: product.id})">
+                <img ng-src="{{product.featured_src}}"/>
+                <h2>{{product.title}}</h2>
+                <p><span style="font-size:26px;" ng-bind-html="product.price_html"></span></p>
+                <button class="button button-small button-assertive" ng-click="addToCart(product);  $event.stopPropagation();">Αγορά
+                    <i class="icon ion-android-cart"></i>
+                </button>
+
+            </ion-item>
+        </ion-list>
+
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="canLoadMore" immediate-check="false">
+
+        </ion-infinite-scroll>
+    </ion-content>
+
+
+</ion-view>

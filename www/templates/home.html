@@ -1,0 +1,54 @@
+<ion-view class="background">
+        <ion-nav-title style="font-size:15px;"><center>ΕΛΛΗΝΙΚΑ ΠΑΡΑΔΟΣΙΑΚΑ ΠΡΟΪΟΝΤΑ</center></ion-nav-title>
+<ion-content> 
+       <ion-slide-box show-pager="true" pager-click="true" auto-play="true" slide-interval="4000" does-continue="true" ng-if="products.length > 0">
+          <ion-slide ng-repeat="product in products">
+            <div><br>
+                <a class="text-center" ui-sref="app.product({productID: product.id})">
+                    <img ng-if="product.images[0].src" ng-src="{{product.images[0].src}}" class="displayed"/>
+                    <div style="font-size:18px;">{{product.title}}</div>
+                    <div style="font-size:22px;" ng-bind-html="product.price_html"></div>
+                </a>
+            </div>
+          </ion-slide>
+        </ion-slide-box>  
+
+    <ion-list class="list-card">
+        <ion-item class="item-divider item-button">
+           <center>Κατηγορίες προϊόντων</center>
+      <button class="button button-assertive button-full" ui-sref="app.categories">Προβολή όλων των κατηγοριών</button>
+        </ion-item>
+         </ion-list>
+         <ion-item class="item-divider item-button">
+           <center>Προϊόντα</center></ion-item>
+        <ion-list>
+            
+            <ion-item class="item-thumbnail-left item-button-bottom" ng-repeat="product in products" ui-sref="app.product({productID: product.id})">
+                <img ng-src="{{product.featured_src}}"/>
+                <h2>{{product.title}}</h2>
+                <p><span style="font-size:26px;" ng-bind-html="product.price_html"></span></p>
+                <button class="button button-small button-assertive" ng-click="addToCart(product);  $event.stopPropagation();">Αγορά
+                    <i class="icon ion-android-cart"></i>
+                </button>
+           </ion-item>
+        </ion-list>
+
+     
+
+
+    <ion-list class="item-body">
+        <ion-item class="item-image padding" >
+            <img src="img/footer-banner.png" style="width:85%;">
+
+  <div class="button-bar">
+    <button class="button button-positive button-block icon ion-social-facebook" browse-to="http://www.facebook.com/ebloko" ></button>
+    <button class="button button-calm button-block icon ion-social-twitter" browse-to="http://twitter.com/ebloko"></button>
+    <button class="button button-royal button-block icon ion-social-instagram-outline" browse-to="http://instagram.com/ebloko"></button>
+  </div>
+</div>
+            
+      <center> <ion-item><div style="font-size:13px;">Developed by ToP</div></ion-item>
+     <div ui-sref="app.useragreement" style="font-size:12px;">ΟΡΟΙ ΧΡΗΣΗΣ</div></ion-item></center>
+    </ion-list>
+</ion-content>
+</ion-view>

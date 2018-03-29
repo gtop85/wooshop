@@ -1,0 +1,13 @@
+<ion-view class="background">
+  <ion-nav-title><center>ΑΝΑΖΗΤΗΣΗ ΑΠΟΣΤΟΛΗΣ</center></ion-nav-title>
+   <ion-content>
+        <form ng-submit="trackOrder()">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Aριθμός αποστολής</span>
+                    <input type="tel" ng-model="trackOrder.number">
+                </label>
+            <button class="button button-balanced button-block" browse-to="http://www.taxydromiki.com/track/{{number}}">ΑΝΑΖΗΤΗΣΗ</button>
+
+    </ion-content>
+</ion-view>
