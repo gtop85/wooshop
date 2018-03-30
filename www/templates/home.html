@@ -1,6 +1,6 @@
 <ion-view class="background">
-        <ion-nav-title style="font-size:15px;"><center>ΕΛΛΗΝΙΚΑ ΠΑΡΑΔΟΣΙΑΚΑ ΠΡΟΪΟΝΤΑ</center></ion-nav-title>
-<ion-content> 
+        <ion-nav-title style="font-size:13px;"><center>ΕΛΛΗΝΙΚΑ ΠΑΡΑΔΟΣΙΑΚΑ ΠΡΟΪΟΝΤΑ</center></ion-nav-title>
+<ion-content>
        <ion-slide-box show-pager="true" pager-click="true" auto-play="true" slide-interval="4000" does-continue="true" ng-if="products.length > 0">
           <ion-slide ng-repeat="product in products">
             <div><br>
@@ -11,7 +11,7 @@
                 </a>
             </div>
           </ion-slide>
-        </ion-slide-box>  
+        </ion-slide-box>
 
     <ion-list class="list-card">
         <ion-item class="item-divider item-button">
@@ -22,7 +22,7 @@
          <ion-item class="item-divider item-button">
            <center>Προϊόντα</center></ion-item>
         <ion-list>
-            
+
             <ion-item class="item-thumbnail-left item-button-bottom" ng-repeat="product in products" ui-sref="app.product({productID: product.id})">
                 <img ng-src="{{product.featured_src}}"/>
                 <h2>{{product.title}}</h2>
@@ -33,7 +33,7 @@
            </ion-item>
         </ion-list>
 
-     
+
 
 
     <ion-list class="item-body">
@@ -46,7 +46,7 @@
     <button class="button button-royal button-block icon ion-social-instagram-outline" browse-to="http://instagram.com/ebloko"></button>
   </div>
 </div>
-            
+
       <center> <ion-item><div style="font-size:13px;">Developed by ToP</div></ion-item>
      <div ui-sref="app.useragreement" style="font-size:12px;">ΟΡΟΙ ΧΡΗΣΗΣ</div></ion-item></center>
     </ion-list>

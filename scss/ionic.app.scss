@@ -1,8 +1,8 @@
 
 
 
-$light:                           #999 !default;
-$stable:                          #327c04 !default;
+$light:                           #F6FFCD !default;
+$stable:                          #BCFFA8 !default;
 $positive:                        #387ef5 !default;
 $calm:                            #11c1f3 !default;
 $balanced:                        #009900 !default;
@@ -29,7 +29,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .scroll {
     height: 100%;
 }
- 
+
 #map {
     margin:0px auto;
     width: 85%;
@@ -84,7 +84,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .badge-container{
      margin-top: 25px!important;
      margin-bottom: 5px!important;
-    
+
 }
 
 .displayed {
@@ -96,9 +96,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     background-position: center center;
     background-size: cover;
 }
-    
+
 .slider-pager {
 top: 10px;
 height:10px;
 }
-    
