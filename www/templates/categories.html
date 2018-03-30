@@ -2,9 +2,9 @@
    <ion-nav-title><center>ΚΑΤΗΓΟΡΙΕΣ ΠΡΟΪΟΝΤΩΝ</center></ion-nav-title>
   <ion-content>
   	<ion-list class="card">
-  		<ion-item ng-repeat="category in categories" class="item-avatar-left item-text-wrap"  ui-sref="app.category({categoryID: cat.slug})">
+  		<ion-item ng-repeat="category in categories" class="item-avatar-left item-text-wrap"  ui-sref="app.category({categoryID: category.slug})">
   			<img ng-src="{{category.image}}"/>
-  			<div style="font-size:20px;">{{category.name}} ({{category.count}})</div>	
+  			<div style="font-size:20px;">{{category.name}} ({{category.count}})</div>
 		</ion-item>
     </ion-list>
   </ion-content>
